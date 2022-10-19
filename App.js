@@ -1,18 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
 
 const Stack = createStackNavigator();
 
 const MainScreen = ({ navigation }) => (
-  <ScrollView style={styles.container}>
+  <View style={styles.container}>
     <Text style={styles.paragraph}>
       Bevvo
     </Text>
     
-      <Image style={styles.logo} source={require('/assets/Bevvo-03-white.png')} />
+      <Image style={styles.logo} source={require('./assets/bevvo-03-white.png')} />
     
     <Text style={styles.paragraph}>
       Welcome to Bevvo
@@ -26,7 +26,7 @@ const MainScreen = ({ navigation }) => (
     <Card style={styles.cardbuffer}>
       <Button title="Payment Settings" onPress={() => navigation.navigate('Payment Settings')} />
     </Card>
-  </ScrollView>
+  </View>
 )
 
 const Bars = ({ navigation }) => (
