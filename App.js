@@ -6,6 +6,96 @@ import { Card } from 'react-native-paper';
 
 const Stack = createStackNavigator();
 
+const MainScreen = ({ navigation }) => (
+  <ScrollView style={styles.container}>
+    <Text style={styles.paragraph}>
+      Bevvo
+    </Text>
+    
+      <Image style={styles.logo} source={require('/assets/Bevvo-03-white.png')} />
+    
+    <Text style={styles.paragraph}>
+      Welcome to Bevvo
+    </Text>
+    <Card style={styles.cardbuffer}>
+      <Button title="Bars" onPress={() => navigation.navigate('Bars')} />
+    </Card>
+    <Card style={styles.cardbuffer}>
+      <Button title="My Details" onPress={() => navigation.navigate('My Details')} />
+    </Card>
+    <Card style={styles.cardbuffer}>
+      <Button title="Payment Settings" onPress={() => navigation.navigate('Payment Settings')} />
+    </Card>
+  </ScrollView>
+)
+
+const Bars = ({ navigation }) => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the Bars page</Text>
+    <Card style={styles.cardbuffer} onPress={() => navigation.navigate('Specific Bar')}>
+      <Text style={styles.barcard}>Bar Name</Text>
+      <Text style={styles.barcard}>This is a brief description of the bar in question. It is a nice tucked away speakeasy in such and such place with such and such drinks with a such and such option in food as well.</Text>
+      <Text style={styles.barcard}>x miles away</Text>
+    </Card>
+    <Card style={styles.cardbuffer}>
+      <Text style={styles.barcard}>Bar Name</Text>
+      <Text style={styles.barcard}>This is a brief description of the bar in question. It is a nice tucked away speakeasy in such and such place with such and such drinks with a such and such option in food as well.</Text>
+      <Text style={styles.barcard}>x miles away</Text>
+    </Card>
+  </View>
+)
+
+const MyDetails = () => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the My Details page</Text>
+  </View>
+)
+
+const PaymentSettings = () => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>Payment Settings</Text>
+    <Text style={styles.paragraph}>Enter your credit card info below</Text>
+    <TextInput style={styles.input} value={'Full name on card'} />
+    <TextInput style={styles.input} value={'Card number'} />
+    <TextInput style={styles.input} value={'Expiration date'} />
+    <TextInput style={styles.input} value={'CVV'} />
+    <Button style={styles.button} title="Save" />
+  </View>
+)
+
+const SpecificBar = ({ navigation }) => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the Specific Bar page</Text>
+    <Button style={styles.button} title="Heres a menu item" onPress={() => navigation.navigate('Menu Item')}/>
+    <Button style={styles.button} title="Let's checkout" onPress={() => navigation.navigate('Checkout')}/>
+  </View>
+)
+
+
+const MenuItem = () => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the Menu Item page</Text>
+  </View>
+)
+
+const Checkout = () => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the Checkout page</Text>
+  </View>
+)
+
+const Proof = () => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the Proof page</Text>
+  </View>
+)
+
+const Cheers = () => (
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>This is the Cheers page</Text>
+  </View>
+)
+
 export default function App() {
   return (
     <View style={styles.container}>
