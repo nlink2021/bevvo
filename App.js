@@ -9,8 +9,19 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on ssssyour app!</Text>
-      <StatusBar style="auto" />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Main" component={MainScreen} />
+          <Stack.Screen name="My Details" component={MyDetails} />
+          <Stack.Screen name="Bars" component={Bars} />
+          <Stack.Screen name="Specific Bar" component={SpecificBar} />
+          <Stack.Screen name="Payment Settings" component={PaymentSettings} />
+          <Stack.Screen name="Menu Item" component={MenuItem} />
+          <Stack.Screen name="Checkout" component={Checkout} />
+          <Stack.Screen name="Proof" component={Proof} />
+          <Stack.Screen name="Cheers" component={Cheers} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
@@ -18,8 +29,47 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#000000',
+    padding: 8,
+    
   },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignItems: 'center',
+    fontFamily: 'Artico',
+    color: '#FFFFFF'
+  },
+  cardbuffer: {
+    padding: 12,
+    margin: 10,
+    alignSelf: 'stretch',
+    backgroundColor: '#A4BC1B',
+    color: '#FFFFFF',
+   
+  },
+  logo: {
+    height: 100,
+    width: 350, 
+  },
+  barcard: {
+    
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    color: 'grey',
+    backgroundColor: '#FFFFFF',
+  },
+  button: {
+    backgroundColor: '#FFFFFF',
+    color: '#FFFFFF',
+    textDecorationColor: 'none',
+  }
 });
