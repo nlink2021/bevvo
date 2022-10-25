@@ -1,30 +1,35 @@
-import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Constants from 'expo-constants';
-import { Card } from 'react-native-paper';
+import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import Constants from 'expo-constants'
+import { Card } from 'react-native-paper'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 const MainScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.paragraph}>
-      Bevvo
-    </Text>
-    
-      <Image style={styles.logo} source={require('./assets/bevvo-03-white.png')} />
-    
-    <Text style={styles.paragraph}>
-      Welcome to Bevvo
-    </Text>
+    <Text style={styles.paragraph}>Bevvo</Text>
+
+    <Image
+      style={styles.logo}
+      source={require('./assets/bevvo-03-white.png')}
+    />
+
+    <Text style={styles.paragraph}>Welcome to Bevvo</Text>
     <Card style={styles.cardbuffer}>
       <Button title="Bars" onPress={() => navigation.navigate('Bars')} />
     </Card>
     <Card style={styles.cardbuffer}>
-      <Button title="My Details" onPress={() => navigation.navigate('My Details')} />
+      <Button
+        title="My Details"
+        onPress={() => navigation.navigate('My Details')}
+      />
     </Card>
     <Card style={styles.cardbuffer}>
-      <Button title="Payment Settings" onPress={() => navigation.navigate('Payment Settings')} />
+      <Button
+        title="Payment Settings"
+        onPress={() => navigation.navigate('Payment Settings')}
+      />
     </Card>
   </View>
 )
@@ -32,14 +37,25 @@ const MainScreen = ({ navigation }) => (
 const Bars = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.paragraph}>This is the Bars page</Text>
-    <Card style={styles.cardbuffer} onPress={() => navigation.navigate('Specific Bar')}>
+    <Card
+      style={styles.cardbuffer}
+      onPress={() => navigation.navigate('Specific Bar')}
+    >
       <Text style={styles.barcard}>Bar Name</Text>
-      <Text style={styles.barcard}>This is a brief description of the bar in question. It is a nice tucked away speakeasy in such and such place with such and such drinks with a such and such option in food as well.</Text>
+      <Text style={styles.barcard}>
+        This is a brief description of the bar in question. It is a nice tucked
+        away speakeasy in such and such place with such and such drinks with a
+        such and such option in food as well.
+      </Text>
       <Text style={styles.barcard}>x miles away</Text>
     </Card>
     <Card style={styles.cardbuffer}>
       <Text style={styles.barcard}>Bar Name</Text>
-      <Text style={styles.barcard}>This is a brief description of the bar in question. It is a nice tucked away speakeasy in such and such place with such and such drinks with a such and such option in food as well.</Text>
+      <Text style={styles.barcard}>
+        This is a brief description of the bar in question. It is a nice tucked
+        away speakeasy in such and such place with such and such drinks with a
+        such and such option in food as well.
+      </Text>
       <Text style={styles.barcard}>x miles away</Text>
     </Card>
   </View>
@@ -66,11 +82,18 @@ const PaymentSettings = () => (
 const SpecificBar = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.paragraph}>This is the Specific Bar page</Text>
-    <Button style={styles.button} title="Heres a menu item" onPress={() => navigation.navigate('Menu Item')}/>
-    <Button style={styles.button} title="Let's checkout" onPress={() => navigation.navigate('Checkout')}/>
+    <Button
+      style={styles.button}
+      title="Heres a menu item"
+      onPress={() => navigation.navigate('Menu Item')}
+    />
+    <Button
+      style={styles.button}
+      title="Let's checkout"
+      onPress={() => navigation.navigate('Checkout')}
+    />
   </View>
 )
-
 
 const MenuItem = () => (
   <View style={styles.container}>
@@ -97,7 +120,13 @@ const Cheers = () => (
 )
 
 export default function App() {
+  // https://docs.expo.dev/versions/latest/sdk/stripe/
   return (
+    // <StripeProvider
+    //   publishableKey={PUBLISHABLE_STRIPE_KEY}
+    //   // urlScheme="luvbucks"
+    //   // merchantIdentifier="merchant.com.{{YOUR_APP_NAME}}"
+    // >
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
@@ -113,7 +142,8 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </View>
-  );
+    // </StripeProvider>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -123,7 +153,6 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#000000',
     padding: 8,
-    
   },
   paragraph: {
     margin: 24,
@@ -132,7 +161,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     fontFamily: 'Artico',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
   },
   cardbuffer: {
     padding: 12,
@@ -140,15 +169,12 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: '#A4BC1B',
     color: '#FFFFFF',
-   
   },
   logo: {
     height: 100,
-    width: 350, 
+    width: 350,
   },
-  barcard: {
-    
-  },
+  barcard: {},
   input: {
     height: 40,
     margin: 12,
@@ -161,5 +187,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     color: '#FFFFFF',
     textDecorationColor: 'none',
-  }
-});
+  },
+})
