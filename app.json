@@ -20,11 +20,11 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.nlink.bevvo",
-      "entitlements": {
-        "com.apple.developer.in-app-payments": [
-          "merchant.com.bevvo"
-        ]
-      },
+      // "entitlements": {
+      //   "com.apple.developer.in-app-payments": [
+      //     "merchant.com.bevvo"
+      //   ]
+      // },
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Bevvo would like your location to improve your notification experience.",
         "NSCameraUsageDescription": "Bevvo would like to access your camera for easy card number entry when checking out."
