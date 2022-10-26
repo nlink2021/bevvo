@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native'
 import { Card } from 'react-native-paper'
+import { IMAGES } from './src/styling/config'
 
 const Stack = createStackNavigator()
 
@@ -217,10 +218,7 @@ const Cheers = ({ navigation }) => (
     <Text style={{ color: 'white', fontSize: 32, textAlign: 'center' }}>
       Cheers, Nick!{'\n'}
     </Text>
-    <Image
-      style={{ height: 300, width: 300 }}
-      source={require('./assets/wine.gif')}
-    />
+    <Image style={{ height: 300, width: 300 }} source={IMAGES.wine} />
     <Image
       style={styles.logo}
       source={require('./assets/bevvo-03-white.png')}
