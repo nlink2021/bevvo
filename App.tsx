@@ -12,37 +12,10 @@ import {
   View,
 } from 'react-native'
 import { Card } from 'react-native-paper'
+import { MainScreen } from './src/screens'
 import { IMAGES } from './src/styling/config'
 
 const Stack = createStackNavigator()
-
-const MainScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <Image
-      style={styles.logo}
-      source={require('./assets/bevvo-03-white.png')}
-    />
-
-    <Card
-      style={styles.cardbuffer1}
-      onPress={() => navigation.navigate('Bars')}
-    >
-      <Text style={styles.homebuttons}>Bars</Text>
-    </Card>
-    <Card
-      style={styles.cardbuffer1}
-      onPress={() => navigation.navigate('My Details')}
-    >
-      <Text style={styles.homebuttons}>My Details</Text>
-    </Card>
-    <Card
-      style={styles.cardbuffer1}
-      onPress={() => navigation.navigate('Payment Settings')}
-    >
-      <Text style={styles.homebuttons}>Payment Settings</Text>
-    </Card>
-  </View>
-)
 
 const Bars = ({ navigation }) => (
   <View style={styles.container}>
