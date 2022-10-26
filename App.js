@@ -173,6 +173,12 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#000000',
     padding: 8,
+    
+  },
+  headerbar: {
+    backgroundColor: 'grey',
+    flex: 1,
+    justifyContent: 'center',
   },
   paragraph: {
     margin: 24,
@@ -181,20 +187,42 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     fontFamily: 'Artico',
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
-  cardbuffer: {
+  cardbuffer1: {
+    flex: 1,
     padding: 12,
-    margin: 10,
+    margin: 3,
+    maxHeight: 60,
+    backgroundColor: '#000000',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#A4BC1B',
+    color: 'white',
+    alignItems: 'center',
+  },
+  cardbuffer2: {
+    flex: 1,
+    padding: 12,
+    margin: 3,
     alignSelf: 'stretch',
-    backgroundColor: '#A4BC1B',
-    color: '#FFFFFF',
+    backgroundColor: '#000000',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#A4BC1B',
+    color: 'white',
+    alignItems: 'center',
+    maxHeight: 150
   },
   logo: {
     height: 100,
     width: 350,
+    marginTop: 29,
+    marginBottom: 29,
   },
-  barcard: {},
+  barcard: {
+    color: 'white',
+  },
   input: {
     height: 40,
     margin: 12,
@@ -208,4 +236,10 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textDecorationColor: 'none',
   },
-})
+  homebuttons: {
+    color: '#FFFFFF',
+    fontFamily: 'Arial',
+    fontSize: 24
+  }
+  
+});
