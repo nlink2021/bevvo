@@ -17,7 +17,8 @@ const STRIPE = {
     try {
       if (currentUser) {
         const result: any = await axios({
-          url: 'https://bevvo.cloudfunctions.net/getStripePaymentIntent',
+          url:
+            'https://us-central1-luvbucks-mobile.cloudfunctions.net/getStripePaymentIntent',
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ const STRIPE = {
             customerId: result.data.customer,
             customerEphemeralKeySecret: result.data.ephemeralKey,
             paymentIntentClientSecret: result.data.intentSecret,
-            merchantDisplayName: 'Bevvo Inc',
+            merchantDisplayName: 'Luvbucks Inc',
             // allowsDelayedPaymentMethods: true,
             // Set `allowsDelayedPaymentMethods` to true if your business can handle payment methods that
             // complete payment after a delay, like SEPA Debit and Sofort.
