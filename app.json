@@ -18,13 +18,29 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nlink.bevvo",
+      // "entitlements": {
+      //   "com.apple.developer.in-app-payments": [
+      //     "merchant.com.bevvo"
+      //   ]
+      // },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Bevvo would like your location to improve your notification experience.",
+        "NSCameraUsageDescription": "Bevvo would like to access your camera for easy card number entry when checking out."
+      },
+      "buildNumber": "1.0.0",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        // "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.nlink.bevvo",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
