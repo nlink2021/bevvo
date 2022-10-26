@@ -78,7 +78,12 @@ const SpecificBar = ({ navigation }) => (
       <Text>123 Willow St</Text>
       <Text>210-555-1234</Text>
     </View>
-    <ScrollView style={styles.headerbar}>
+    <ScrollView
+      style={{
+        backgroundColor: 'grey',
+        flex: 1,
+      }}
+    >
       <Text style={{ fontWeight: 'bold', fontSize: 24 }}>Specials</Text>
       <Button
         style={styles.button}

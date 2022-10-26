@@ -1,5 +1,7 @@
 import Constants from 'expo-constants'
 import { StyleSheet } from 'react-native'
+import { scaleWidth } from '../layout'
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -24,7 +26,7 @@ export const styles = StyleSheet.create({
   },
   cardbuffer1: {
     flex: 1,
-    padding: 12,
+    padding: scaleWidth(12), // TODO: scale stuff throughout the app!
     margin: 3,
     maxHeight: 60,
     backgroundColor: '#000000',
