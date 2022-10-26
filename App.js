@@ -27,25 +27,14 @@ const MainScreen = ({ navigation }) => (
 const Bars = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.paragraph}>This is the Bars page</Text>
-    <Card
-      style={styles.cardbuffer}
-      onPress={() => navigation.navigate('Specific Bar')}
-    >
+    <Card style={styles.cardbuffer2} onPress={() => navigation.navigate('Specific Bar')}>
       <Text style={styles.barcard}>Bar Name</Text>
-      <Text style={styles.barcard}>
-        This is a brief description of the bar in question. It is a nice tucked
-        away speakeasy in such and such place with such and such drinks with a
-        such and such option in food as well.
-      </Text>
+      <Text style={styles.barcard}>This is a brief description of the bar in question. It is a nice tucked away speakeasy in such and such place with such and such drinks with a such and such option in food as well.</Text>
       <Text style={styles.barcard}>x miles away</Text>
     </Card>
-    <Card style={styles.cardbuffer}>
+    <Card style={styles.cardbuffer2}>
       <Text style={styles.barcard}>Bar Name</Text>
-      <Text style={styles.barcard}>
-        This is a brief description of the bar in question. It is a nice tucked
-        away speakeasy in such and such place with such and such drinks with a
-        such and such option in food as well.
-      </Text>
+      <Text style={styles.barcard}>This is a brief description of the bar in question. It is a nice tucked away speakeasy in such and such place with such and such drinks with a such and such option in food as well.</Text>
       <Text style={styles.barcard}>x miles away</Text>
     </Card>
   </View>
@@ -53,7 +42,11 @@ const Bars = ({ navigation }) => (
 
 const MyDetails = () => (
   <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the My Details page</Text>
+    <Text style={styles.paragraph}>My Details</Text>
+    <TextInput style={styles.input} value={'Email'} />
+    <TextInput style={styles.input} value={'Date of birth'} />
+    <TextInput style={styles.input} value={'Phone number'} />
+    <Button style={styles.button} title="Save" />
   </View>
 )
 
@@ -71,19 +64,31 @@ const PaymentSettings = () => (
 
 const SpecificBar = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the Specific Bar page</Text>
-    <Button
-      style={styles.button}
-      title="Heres a menu item"
-      onPress={() => navigation.navigate('Menu Item')}
-    />
-    <Button
-      style={styles.button}
-      title="Let's checkout"
-      onPress={() => navigation.navigate('Checkout')}
-    />
+    <View style={styles.headerbar}>
+      <Text style={{ fontWeight: 'bold', fontSize: 24}}>Leo's Tavern</Text>
+      <Text>123 Willow St</Text>
+      <Text>210-555-1234</Text>
+    </View>
+    <View style={styles.headerbar}>
+      <Text>Leo's Tavern</Text>
+      <Text>123 Willow St</Text>
+      <Text>210-555-1234</Text>
+    </View>
+    <ScrollView style={styles.headerbar}>
+      <Text style={{ fontWeight: 'bold', fontSize: 24}}>Specials</Text>
+      <Button style={styles.button} title="Heres a menu item" onPress={() => navigation.navigate('Menu Item')}/>
+      <Text style={{ fontWeight: 'bold', fontSize: 24}}>Beer</Text>
+      <Text style={{ fontWeight: 'bold', fontSize: 24}}>Wine</Text>
+      
+      <Button style={styles.button} title="Heres a menu item" onPress={() => navigation.navigate('Menu Item')}/>
+      <Button style={styles.button} title="Let's checkout" onPress={() => navigation.navigate('Checkout')}/>
+
+    </ScrollView>
+
+    
   </View>
 )
+
 
 const MenuItem = () => (
   <View style={styles.container}>
@@ -91,21 +96,46 @@ const MenuItem = () => (
   </View>
 )
 
-const Checkout = () => (
+const Checkout = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.paragraph}>This is the Checkout page</Text>
+    <Button style={styles.button} title="Slide to Confirm" onPress={() => navigation.navigate('Proof')}/>
   </View>
 )
 
-const Proof = () => (
-  <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the Proof page</Text>
+const getCurrentDate=()=>{
+      var date = moment().utcOffset('+05:30').format('MMMM Do YYYY')
+      return date;
+}
+
+const Proof = ({ navigation }) => (
+  <View style={{flex: 1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#000000', padding: 8}}>
+  
+    <Text style={{ color: 'white', fontSize: '32', textAlign: 'center' }}>Proof of Purchase{"\n"}Leo's Tavern{"\n"}Nick Link</Text>
+
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Text style={{ color: 'white', fontSize: '16', textAlign: 'center' }}>{getCurrentDate()}</Text>
+      <Image source={require('/assets/Bevvo-03-white.png')} style={{width: 100, height: 100, borderRadius: 400/ 2, resizeMode: 'contain'}} />
+    </View>
+    <View style={{ backgroundColor: '#000000', height: 150, minWidth: '100%' }}>
+      <ScrollView style={{ flex: 1/2, flexDirection: 'row' }}>
+        <Text style={{ color: 'white' }}>x1  Beverage A{"\n"}x3  Beverage B{"\n"}x2  Beverage C{"\n"}x1  Beverage A{"\n"}x3  Beverage B{"\n"}x2  Beverage C{"\n"}</Text>
+        <Text style={{ color: 'white' }}>$8.99{"\n"}$10.99{"\n"}5.99{"\n"}$8.99{"\n"}$10.99{"\n"}5.99{"\n"}</Text>
+      </ScrollView>
+    </View>
+    <Text style={{ color: 'white', fontSize: '16', textAlign: 'center' }}>Follow us on social media!</Text>
+    <Text style={{ color: 'white', fontSize: '16', textAlign: 'center' }}>Slide when you've received your order. Enjoy!</Text>
+
+    <Button style={styles.button} title="Now you wait for your order" onPress={() => navigation.navigate('Cheers')}/>
   </View>
 )
 
-const Cheers = () => (
-  <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the Cheers page</Text>
+const Cheers = ({ navigation }) => (
+  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#000000', padding: 8}}>
+    <Text style={{ color: 'white', fontSize: '32', textAlign: 'center' }}>Cheers, Nick!{"\n"}</Text>
+    <Image style={{ height: 300, width: 300 }} source={require('/assets/wine.gif')} />
+    <Image style={styles.logo} source={require('/assets/Bevvo-03-white.png')} />
+    <Button style={styles.button} title="Screen takes you back to specific bar after 3 seconds" onPress={() => navigation.navigate('Specific Bar')}/>
   </View>
 )
 
