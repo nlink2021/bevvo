@@ -10,7 +10,7 @@ const Stack = createStackNavigator()
 const MainScreen = ({ navigation }) => (
   <View style={styles.container}>
     
-      <Image style={styles.logo} source={require('/assets/Bevvo-03-white.png')} />
+      <Image style={styles.logo} source={require('./assets/bevvo-03-white.png')} />
 
     <Card style={styles.cardbuffer1} onPress = {() => navigation.navigate('Bars')} >
       <Text style={styles.homebuttons}>Bars</Text>
@@ -115,7 +115,7 @@ const Proof = ({ navigation }) => (
 
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <Text style={{ color: 'white', fontSize: '16', textAlign: 'center' }}>{getCurrentDate()}</Text>
-      <Image source={require('/assets/Bevvo-03-white.png')} style={{width: 100, height: 100, borderRadius: 400/ 2, resizeMode: 'contain'}} />
+      <Image source={require('./assets/bevvo-03-white.png')} style={{width: 100, height: 100, borderRadius: 400/ 2, resizeMode: 'contain'}} />
     </View>
     <View style={{ backgroundColor: '#000000', height: 150, minWidth: '100%' }}>
       <ScrollView style={{ flex: 1/2, flexDirection: 'row' }}>
@@ -134,7 +134,7 @@ const Cheers = ({ navigation }) => (
   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#000000', padding: 8}}>
     <Text style={{ color: 'white', fontSize: '32', textAlign: 'center' }}>Cheers, Nick!{"\n"}</Text>
     <Image style={{ height: 300, width: 300 }} source={require('/assets/wine.gif')} />
-    <Image style={styles.logo} source={require('/assets/Bevvo-03-white.png')} />
+    <Image style={styles.logo} source={require('./assets/bevvo-03-white.png')} />
     <Button style={styles.button} title="Screen takes you back to specific bar after 3 seconds" onPress={() => navigation.navigate('Specific Bar')}/>
   </View>
 )
