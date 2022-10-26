@@ -1,43 +1,25 @@
-<<<<<<< HEAD
 import { StyleSheet, Text, View, Button, Image, TextInput, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
-=======
-import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import Constants from 'expo-constants'
-import { Card } from 'react-native-paper'
->>>>>>> e2bfebea36677bf7e325e25ce0713aa7df1959b1
+
 
 const Stack = createStackNavigator()
 
 const MainScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.paragraph}>Bevvo</Text>
+    
+      <Image style={styles.logo} source={require('/assets/Bevvo-03-white.png')} />
 
-    <Image
-      style={styles.logo}
-      source={require('./assets/bevvo-03-white.png')}
-    />
-
-    <Text style={styles.paragraph}>Welcome to Bevvo</Text>
-    <Card style={styles.cardbuffer}>
-      <Button title="Bars" onPress={() => navigation.navigate('Bars')} />
+    <Card style={styles.cardbuffer1} onPress = {() => navigation.navigate('Bars')} >
+      <Text style={styles.homebuttons}>Bars</Text>
     </Card>
-    <Card style={styles.cardbuffer}>
-      <Button
-        title="My Details"
-        onPress={() => navigation.navigate('My Details')}
-      />
+    <Card style={styles.cardbuffer1} onPress = {() => navigation.navigate('My Details')} >
+      <Text style={styles.homebuttons}>My Details</Text>
     </Card>
-    <Card style={styles.cardbuffer}>
-      <Button
-        title="Payment Settings"
-        onPress={() => navigation.navigate('Payment Settings')}
-      />
+    <Card style={styles.cardbuffer1} onPress = {() => navigation.navigate('Payment Settings')} >
+      <Text style={styles.homebuttons}>Payment Settings</Text>
     </Card>
   </View>
 )
