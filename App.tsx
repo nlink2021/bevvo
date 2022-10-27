@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native'
 import { Card } from 'react-native-paper'
@@ -19,12 +20,12 @@ const Stack = createStackNavigator()
 
 const Bars = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the Bars page</Text>
+    <Text style={styles.paragraph}>Bars in your area</Text>
     <Card
       style={styles.cardbuffer2}
       onPress={() => navigation.navigate('Specific Bar')}
     >
-      <Text style={styles.barcard}>Bar Name</Text>
+      <Text style={styles.barcard}>Leo's Tavern</Text>
       <Text style={styles.barcard}>
         This is a brief description of the bar in question. It is a nice tucked
         away speakeasy in such and such place with such and such drinks with a
@@ -276,7 +277,7 @@ const styles = StyleSheet.create({
     margin: 3,
     alignSelf: 'stretch',
     backgroundColor: '#000000',
-    borderWidth: 1,
+    borderWidth: 5,
     borderRadius: 5,
     borderColor: '#A4BC1B',
     color: 'white',
