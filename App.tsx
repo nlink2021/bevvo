@@ -99,9 +99,22 @@ const SpecificBar = ({ navigation }) => (
   </View>
 )
 
-const MenuItem = () => (
-  <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the Menu Item page</Text>
+const MenuItem = ({ navigation }) => (
+  <View style={{flex: 1, backgroundColor: '#000000', justifyContent: 'space-evenly' }}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', borderColor: '#A4BC1B', borderWidth: 2, borderRadius: 5, padding: 10 }}>
+      <Text style={{ color: '#FFFFFF', fontSize: 20 }}>Bottle of Corona</Text>
+      <Text style={{ color: '#FFFFFF', fontSize: 20 }}>$7.99</Text>
+    </View>
+    <Text style={{ color: '#FFFFFF', textAlign: 'center', fontSize: 20 }}>How many?</Text>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+      <Text style={{ color: '#FFFFFF', fontSize: 48 }}>-</Text>
+      <Text style={{ color: '#FFFFFF', fontSize: 48 }}>1</Text>
+      <Text style={{ color: '#FFFFFF', fontSize: 48 }}>+</Text>
+    </View>
+      <Text style={{ color: '#FFFFFF', fontSize: 48, textAlign: 'center' }}>$7.99</Text>
+    <View style={{ borderColor: '#A4BC1B', borderWidth: 2, borderRadius: 5, padding: 10 }}>
+      <Text style={{ color: '#FFFFFF', fontSize: 48, textAlign: 'center' }} onPress={() => navigation.navigate('Specific Bar')}>Add to Order</Text>
+    </View>    
   </View>
 )
 
