@@ -119,13 +119,32 @@ const MenuItem = ({ navigation }) => (
 )
 
 const Checkout = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text style={styles.paragraph}>This is the Checkout page</Text>
-    <Button
-      style={styles.button}
-      title="Slide to Confirm"
-      onPress={() => navigation.navigate('Proof')}
-    />
+  <View style={{ flex: 1, backgroundColor: '#000000', justifyContent: 'space-evenly' }}>
+    <View style={{ borderWidth: 1, borderTopColor: '#A4BC1B', borderBottomColor: '#A4BC1B', padding: 12 }}>
+      <Text style={{ color: '#FFFFFF', textAlign: 'center', fontSize: 32 }}>Order Summary</Text>
+    </View>
+    <View style={{ borderWidth: 1, borderTopColor: '#A4BC1B', borderBottomColor: '#A4BC1B', padding: 12 }}>
+      <Text style={{ color: '#FFFFFF', textAlign: 'center', fontSize: 27 }}>Leo's Tavern</Text>
+    </View>
+    <View style={{ height: 150 }}>
+      <ScrollView>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Text style={{ color: '#FFFFFF', fontSize: 18 }}>x2  Shiner Bock (bottles){"\n"}x2  Shiner Bock (bottles){"\n"}x2  Shiner Bock (bottles)</Text>
+          <Text style={{ color: '#FFFFFF', fontSize: 18 }}>$7.99{"\n"}$3.99{"\n"}$12.99</Text>
+        </View>
+      </ScrollView>
+    </View>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <Text style={{ color: '#FFFFFF', fontSize: 25 }}>Subtotal{"\n"}Tip{"\n"}Processing fee</Text>
+      <Text style={{ color: '#FFFFFF', fontSize: 25 }}>$7.99{"\n"}Tip list{"\n"}$3.99</Text>
+    </View>
+    <View style={{ alignItems: 'center' }}>
+      <Text style={{ color: '#FFFFFF', fontSize: 27 }}>Total: $XX.XX</Text>
+      <Text style={{ color: '#FFFFFF', fontSize: 18 }}>Hold to confirm</Text>
+      <View style={styles.shapecontainer}>
+        <TouchableOpacity style={styles.circle} onLongPress={() => navigation.navigate('Proof')} delayLongPress={2000} />
+      </View>
+    </View>   
   </View>
 )
 
