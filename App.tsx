@@ -149,7 +149,7 @@ const Checkout = ({ navigation }) => (
 )
 
 const getCurrentDate = () => {
-  var date = moment().utcOffset('+05:30').format('MMMM Do YYYY')
+  var date = moment().utcOffset('+05:30').format('MMMM DD')
   return date
 }
 
@@ -157,22 +157,23 @@ const Proof = ({ navigation }) => (
   <View
     style={{
       flex: 1,
-      justifyContent: 'space-evenly',
-      alignItems: 'center',
+      justifyContent: 'space-between',
       backgroundColor: '#000000',
       padding: 8,
     }}
-  >
-    <Text style={{ color: 'white', fontSize: 32, textAlign: 'center' }}>
-      Proof of Purchase{'\n'}Leo's Tavern{'\n'}Nick Link
-    </Text>
+  > 
+    <View style={{ borderWidth: 1, borderTopColor: '#A4BC1B', borderBottomColor: '#A4BC1B', padding: 12 }}>
+      <Text style={{ color: 'white', fontSize: 32, textAlign: 'center' }}>
+        Proof of Purchase{'\n'}Leo's Tavern{'\n'}Nick Link
+      </Text>
+    </View>
 
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
       <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
-        {getCurrentDate()}
+        {getCurrentDate()}{"\n"}17:32:34
       </Text>
       <Image
-        source={require('./assets/bevvo-03-white.png')}
+        source={require('./assets/bevvo_black_lime.png')}
         style={{
           width: 100,
           height: 100,
@@ -183,27 +184,19 @@ const Proof = ({ navigation }) => (
     </View>
     <View style={{ backgroundColor: '#000000', height: 150, minWidth: '100%' }}>
       <ScrollView style={{ flex: 1 / 2, flexDirection: 'row' }}>
-        <Text style={{ color: 'white' }}>
-          x1 Beverage A{'\n'}x3 Beverage B{'\n'}x2 Beverage C{'\n'}x1 Beverage A
-          {'\n'}x3 Beverage B{'\n'}x2 Beverage C{'\n'}
-        </Text>
-        <Text style={{ color: 'white' }}>
-          $8.99{'\n'}$10.99{'\n'}5.99{'\n'}$8.99{'\n'}$10.99{'\n'}5.99{'\n'}
-        </Text>
+        <Text style={{ color: 'white', fontSize: 24 }}>x1  Glass of Chardonnay{"\n"}x3  Blue Moon (bottle){"\n"}x2  Skyy Vodka (shots){"\n"}x7  Shiner Bock (tall){"\n"}x3  Beverage B</Text>
       </ScrollView>
     </View>
     <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
-      Follow us on social media!
+      Hold when you've received your order. Enjoy!
     </Text>
-    <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
-      Slide when you've received your order. Enjoy!
-    </Text>
-
-    <Button
-      style={styles.button}
-      title="Now you wait for your order"
-      onPress={() => navigation.navigate('Cheers')}
-    />
+    <View style={styles.shapecontainer}>
+        <TouchableOpacity 
+          style={styles.circle} 
+          onLongPress={() => navigation.navigate('Cheers')} 
+          delayLongPress={2000} 
+        />
+    </View>
   </View>
 )
 
@@ -333,5 +326,17 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontFamily: 'Arial',
     fontSize: 24,
+  },
+  shapecontainer: {
+    height: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
+  },
+  circle: {
+    height: 120,
+    width: 120,
+    borderRadius: 120 / 2,
+    backgroundColor: '#A4BC1B',
   },
 })
