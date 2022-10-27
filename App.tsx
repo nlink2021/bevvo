@@ -68,43 +68,34 @@ const PaymentSettings = () => (
 )
 
 const SpecificBar = ({ navigation }) => (
-  <View style={styles.container}>
-    <View style={styles.headerbar}>
-      <Text style={{ fontWeight: 'bold', fontSize: 24 }}>Leo's Tavern</Text>
-      <Text>123 Willow St</Text>
-      <Text>210-555-1234</Text>
+  <View style={{flex: 1, backgroundColor: '#000000', justifyContent: 'space-evenly' }}>
+    <View>
+      <Text style={{ fontWeight: 'bold', fontSize: 32, color: '#FFFFFF' }}>Leo's Tavern</Text>
+      <Text style={{ color: '#FFFFFF' }}>123 Willow St</Text>
+      <Text style={{ color: '#FFFFFF' }}>210-555-1234</Text>
     </View>
-    <View style={styles.headerbar}>
-      <Text>Leo's Tavern</Text>
-      <Text>123 Willow St</Text>
-      <Text>210-555-1234</Text>
+    <View style={{ height: 400 }}>
+      <ScrollView>
+        <View style={{ backgroundColor: '#000000' }}>
+          <Text style={{ fontWeight: 'bold', fontSize: 24, color: '#FFFFFF' }}>Specials</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>Leo's Mixer                                                      $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Leo's Mixer                                                      $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Leo's Mixer                                                      $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Leo's Mixer                                                      $7.99 - Add</Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 24, color: '#FFFFFF' }}>{"\n"}Beer</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>Shiner Bock                                                     $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Shiner Bock                                                     $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Shiner Bock                                                     $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Shiner Bock                                                     $7.99 - Add</Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 24, color: '#FFFFFF' }}>{"\n"}Wine</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>Pinot Grigio                                                     $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Pinot Grigio                                                     $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Pinot Grigio                                                     $7.99 - Add</Text>
+            <Text style={{ color: '#FFFFFF' }} onPress={() => navigation.navigate('Menu Item')}>{"\n"}Pinot Grigio                                                     $7.99 - Add</Text>   
+        </View>
+      </ScrollView>
     </View>
-    <ScrollView
-      style={{
-        backgroundColor: 'grey',
-        flex: 1,
-      }}
-    >
-      <Text style={{ fontWeight: 'bold', fontSize: 24 }}>Specials</Text>
-      <Button
-        style={styles.button}
-        title="Heres a menu item"
-        onPress={() => navigation.navigate('Menu Item')}
-      />
-      <Text style={{ fontWeight: 'bold', fontSize: 24 }}>Beer</Text>
-      <Text style={{ fontWeight: 'bold', fontSize: 24 }}>Wine</Text>
-
-      <Button
-        style={styles.button}
-        title="Heres a menu item"
-        onPress={() => navigation.navigate('Menu Item')}
-      />
-      <Button
-        style={styles.button}
-        title="Let's checkout"
-        onPress={() => navigation.navigate('Checkout')}
-      />
-    </ScrollView>
+    <Button style={styles.button} title="Let's checkout" onPress={() => navigation.navigate('Checkout')}/>
   </View>
 )
 
